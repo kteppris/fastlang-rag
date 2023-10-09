@@ -12,7 +12,7 @@ services:
   chatapi:
     build:
       context: .
-      dockerfile: Dockerfile_CUDA
+      dockerfile: Dockerfile
     mem_limit: 23g
     memswap_limit: 54g
     command: tail -f /dev/null # Overriding to not start FastAPI automatically
