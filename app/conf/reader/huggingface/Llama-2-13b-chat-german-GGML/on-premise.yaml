@@ -1,0 +1,16 @@
+defaults:
+  # loading defaults of HG on premise to here
+  - /reader/huggingface/on-premise_defaults@_here_
+  # loading prompt tamples of llama-2... at prompt template
+  - /reader/huggingface/Llama-2-13b-chat-german/prompt_template@prompt_template
+name: Llama-2-13b-chat-german-GGML
+user: jphme
+type: CTransformers
+args:
+  gpu_layers: 110
+  model_type: 'llama'
+  config:
+    max_new_tokens: 256
+    repetition_penalty: 1.1
+    temperature: 0.1
+    stream: true

@@ -1,0 +1,5 @@
+type: HuggingFaceEmbeddings
+args:
+  cache_folder: "/data/models"
+  model_kwargs:
+    device: cpu

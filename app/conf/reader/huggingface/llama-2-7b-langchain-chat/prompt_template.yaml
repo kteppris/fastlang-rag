@@ -1,0 +1,26 @@
+map_reduce:
+  question_prompt:
+    template: "<s>[INST] Use the following portion of a long document to see if any of the text is relevant to answer the question. 
+      Return any relevant text verbatim.
+      {context}
+      Question: {question}
+      Relevant text, if any:[/INST] Assistant Message </s>"  
+    input_variables: ["context", "question"]
+  combine_prompt:
+    template: "<s>[INST] Given the following extracted parts of a long document and a question, create a final answer. 
+      If you don't know the answer, just say that you don't know. Don't try to make up an answer.
+
+      QUESTION: Which state/country's law governs the interpretation of the contract?
+      =========
+      Content: This Agreement is governed by English law and the parties submit to the exclusive jurisdiction of the English courts in  relation to any dispute (contractual or non-contractual) concerning this Agreement save that either party may apply to any court for an  injunction or other relief to protect its Intellectual Property Rights.
+
+      Content: (b) if Google believes, in good faith, that the Distributor has violated or caused Google to violate any Anti-Bribery Laws (as  defined in Clause 8.5) or that such a violation is reasonably likely to occur,
+      =========
+      FINAL ANSWER: This Agreement is governed by English law.
+
+      QUESTION: {question}
+      =========
+      {summaries}
+      =========
+      FINAL ANSWER:[/INST] Assistant Message </s>"
+    input_variables:  ["summaries", "question"]

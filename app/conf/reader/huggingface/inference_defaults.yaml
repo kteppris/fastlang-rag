@@ -1,0 +1,2 @@
+type: HuggingfaceEndpoint
+endpoint: https://api-inference.huggingface.co/models/

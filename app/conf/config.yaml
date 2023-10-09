@@ -1,0 +1,6 @@
+defaults:
+  - vectorstore: chroma
+  - encoder: huggingface/paraphrase-multilingual-MiniLM-L12-v2/inference
+  - data: studienangebot
+  - chain: stuff
+  - reader: huggingface/Llama-2-13b-chat-german-GGML/on-premise

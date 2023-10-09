@@ -1,0 +1,6 @@
+openai_api_key: ${oc.env:OPENAI_KEY,null}
+type: OpenAI
+name: text-embedding-ada-002
+args:
+  model: text-embedding-ada-002
+  

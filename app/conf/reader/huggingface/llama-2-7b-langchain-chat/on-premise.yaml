@@ -1,0 +1,11 @@
+defaults:
+  # loading defaults of HG on premise to here
+  - /reader/huggingface/on-premise_defaults@_here_
+  # loading prompt tamples of llama-2... at prompt template
+  - huggingface/llama-2-7b-langchain-chat/prompt_template@prompt_template
+name: llama-2-7b-langchain-chat
+user: Photolens
+args:
+  cache_folder: "/data/models"
+  model_kwargs:
+    max_new_tokens: 400

@@ -1,0 +1,4 @@
+api_key: ${oc.env:HUGGINGFACE_KEY,null}
+type: HuggingFaceHubEmbeddings
+args:
+  model_kwargs: {}

@@ -1,0 +1,21 @@
+map_reduce:
+  question_prompt:
+    template: "<s>[INST]<<SYS>>
+      You are a helpful, respectful and honest assistant. Always answer as helpfully as possible, while being safe. 
+
+      If a question does not make any sense, or is not factually coherent, explain why instead of answering something not correct. If you don't know the answer to a question, please don't share false information.
+      Use the following portion of a long document to see if any of the text is relevant to answer the question. 
+      Return any relevant text verbatim.<</SYS>>
+      {context}
+      QUESTION: {question}
+      Relevant text, if any:
+      Assistant Message[/INST]"  
+    input_variables: ["context", "question"]
+  combine_prompt:
+    template: "<s>[INST]<<SYS>> Given the following extracted parts of a long document and a question, create a final answer. 
+      If you don't know the answer, just say that you don't know. Don't try to make up an answer.<</SYS>>
+
+      QUESTION: {question}
+      {summaries}
+      FINAL ANSWER:[/INST]"
+    input_variables:  ["summaries", "question"]

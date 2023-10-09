@@ -1,0 +1,4 @@
+defaults:
+  - /encoder/huggingface/inference_defaults@_here_
+name: multilingual-e5-large
+user: intfloat

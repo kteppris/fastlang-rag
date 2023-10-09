@@ -1,0 +1,11 @@
+type: chroma
+settings:
+  host: chroma
+  port: 8000
+  ssl: False
+search_args:
+  search_type: similarity
+  search_kwargs:
+    k: 2
+
+

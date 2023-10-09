@@ -1,0 +1,36 @@
+version: '3.8'
+services:
+  chroma:
+    image: ghcr.io/chroma-core/chroma:0.4.4
+    volumes:
+      - index_data:/index_data
+    environment:
+      - IS_PERSISTENT=TRUE
+      - ALLOW_RESET=TRUE
+    ports:
+      - 8000:8000
+  chatapi:
+    build:
+      context: .
+      dockerfile: Dockerfile_CUDA
+    mem_limit: 23g
+    memswap_limit: 54g
+    command: tail -f /dev/null # Overriding to not start FastAPI automatically
+    volumes:
+    - ./app:/app
+    - ./.devcontainer:/devcontainer
+    ports:
+      - 8001:8000
+    depends_on:
+      - chroma
+    environment:
+      - MODE=development
+    deploy:
+      resources:
+        reservations:
+          devices:
+          - driver: nvidia
+            count: 1
+            capabilities: [gpu]
+volumes:
+  index_data:

@@ -1,0 +1,4 @@
+defaults:
+  - /encoder/huggingface/inference_defaults@_here_
+name: paraphrase-multilingual-MiniLM-L12-v2
+user: sentence-transformers

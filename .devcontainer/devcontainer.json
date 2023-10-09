@@ -1,0 +1,33 @@
+{
+    "name": "ChatBot Dev",
+    "workspaceFolder": "/app",
+    "dockerComposeFile": "../docker-compose.yml",
+    "service": "chatapi",
+    "customizations": { 
+        "vscode": {
+            "extensions": [
+                "dbankier.vscode-quick-select",
+                "eamodio.gitlens",
+                "Gruntfuggly.todo-tree",
+                "MS-CEINTL.vscode-language-pack-de",
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "ms-toolsai.jupyter",
+                "ms-toolsai.jupyter-keymap",
+                "ms-toolsai.jupyter-renderers",
+                "njpwerner.autodocstring",
+                "ms-vsliveshare.vsliveshare"
+            ],
+            "settings": {
+                // This avoids annoying 
+                "python.analysis.enablePytestSupport": false,
+                "python.autoComplete.extraPaths": ["/app"],
+                "python.analysis.extraPaths": ["/app"],
+                "autoDocstring.docstringFormat": "numpy"
+            }
+        }
+    },
+    "postCreateCommand": "/bin/bash /devcontainer/setup.sh"
+}
+
+

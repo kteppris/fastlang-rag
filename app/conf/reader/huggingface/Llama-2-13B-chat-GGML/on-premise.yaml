@@ -1,0 +1,7 @@
+defaults:
+  # loading settings of the 7B Version
+  - /reader/huggingface/Llama-2-7B-Chat-GGML/on-premise@_here_
+
+name: Llama-2-13B-chat-GGML
+args:
+  gpu_layers: 130

@@ -1,0 +1,23 @@
+sources:
+  gruenderwiki:
+    type: PyPDFLoader
+    args:
+      file_path: 'https://www.th-luebeck.de/fileadmin/media/01_Hochschule/01_Aktuelles/Publikationen/Studienangebot_2020_web.pdf'
+    content_type: 'text'
+
+splitter:
+  text: 
+    type: RecursiveCharacterTextSplitter
+    args: 
+      chunk_size: 600
+      chunk_overlap: 100
+      add_start_index: true
+      separators: ["\n\n", "\n", "."]
+  markdown:
+    type: MarkdownTextSplitter
+    args:
+      chunk_size: 400
+      chunk_overlap: 100
+      add_start_index: true
+    
+

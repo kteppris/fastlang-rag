@@ -1,0 +1,15 @@
+defaults:
+  # loading defaults of HG on premise to here
+  - /reader/huggingface/on-premise_defaults@_here_
+  # loading prompt tamples of llama-2... at prompt template
+  - /reader/huggingface/Llama-2-7B-Chat-GGML/prompt_template@prompt_template
+name: Llama-2-70B-chat-GGUF
+user: TheBloke
+type: CTransformers
+args:
+  gpu_layers: 110
+  config:
+    max_new_tokens: 256
+    repetition_penalty: 1.1
+    temperature: 0.1
+    stream: true
