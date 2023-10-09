@@ -13,7 +13,7 @@
 
 ## Project Goals
 
-1. Design a Chatbot API that interacts with content related to startup foundations.
+1. Design a Chatbot API that interacts with content.
 2. Enable the Chatbot to provide foundation-related answers.
 3. Support integration with various pre-trained models, primarily from Hugging Face and OpenAI.
 4. Ensure the system is scalable and maintainable by an adept team.
